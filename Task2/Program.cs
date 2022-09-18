@@ -1,8 +1,14 @@
 ﻿// Найти сумму элементов от M до N, N и M заданы
 
-int SumElements(int m, int n)
+void Numbers (int M, int N, int SUM)
 {
-    if (m == n) return m;
-    return m + SumElements(m + 1, n);
+    if (M >  N) 
+    {
+        Console.WriteLine($"Сумма элементов в промежутке от M до N: {SUM}"); 
+        return;
+    }
+    SUM = SUM + (M++);
+    Numbers(M, N, SUM);
 }
-Console.WriteLine(SumElements(1, 8));
+
+Numbers(1, 5, 0);
